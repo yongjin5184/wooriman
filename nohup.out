@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 > at_st@0.0.0 start /home/ubuntu/wooriman/at_st
 > nodemon app.js
 
@@ -80,6 +81,8 @@ npm WARN For further explanations, please read
  
 npm ERR! not ok code 0
 
+=======
+>>>>>>> cbc473043af912ec20928f94ca933610de23b026
 module.js:340
     throw err;
           ^
@@ -93,6 +96,7 @@ Error: Cannot find module '/home/ubuntu/wooriman/at_st/npm'
 module.js:340
     throw err;
           ^
+<<<<<<< HEAD
 Error: Cannot find module '/home/ubuntu/npm'
     at Function.Module._resolveFilename (module.js:338:15)
     at Function.Module._load (module.js:280:25)
@@ -141,12 +145,15 @@ Error: Cannot find module '/home/ubuntu/app.js'
 module.js:340
     throw err;
           ^
+=======
+>>>>>>> cbc473043af912ec20928f94ca933610de23b026
 Error: Cannot find module '/home/ubuntu/wooriman/at_st/npm'
     at Function.Module._resolveFilename (module.js:338:15)
     at Function.Module._load (module.js:280:25)
     at Function.Module.runMain (module.js:497:10)
     at startup (node.js:119:16)
     at node.js:902:3
+<<<<<<< HEAD
 Express server listening on port 9000
 [0mGET / [32m200 [0m9.060 ms - 207[0m
 [0mGET /stylesheets/style.css [32m200 [0m3.128 ms - 111[0m
@@ -155,3 +162,5 @@ Express server listening on port 9000
 [0mGET / [36m304 [0m0.606 ms - -[0m
 [0mGET /stylesheets/style.css [36m304 [0m0.280 ms - -[0m
 [0mGET http://www.baidu.com/cache/global/img/gs.gif [33m404 [0m2.373 ms - 995[0m
+=======
+>>>>>>> cbc473043af912ec20928f94ca933610de23b026
