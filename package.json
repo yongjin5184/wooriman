@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "webpack-dev-server --hot"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -12,6 +12,10 @@
     "ejs": "~2.4.1",
     "express": "~4.13.4",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "serve-favicon": "~2.3.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   }
 }
