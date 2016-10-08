@@ -1,14 +1,15 @@
 var config = {
-   entry: './main.js',
+   entry: './src/index.js',
 	
    output: {
-      path:'./',
-      filename: 'index.js',
+      path: __dirname + '/public/',
+      filename: 'bundle.js'
    },
 	
    devServer: {
       inline: true,
-      port: 9000
+      port: 9000,
+      contentBase: __dirname + '/public/'
    },
 	
    module: {
