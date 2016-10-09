@@ -20,6 +20,7 @@ var config = {
             loader: 'babel',
 				
             query: {
+               cacheDirectory: true,
                presets: ['es2015', 'react']
             }
          }
