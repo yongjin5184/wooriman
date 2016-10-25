@@ -21467,7 +21467,7 @@
 	         return _react2.default.createElement(
 	            'div',
 	            null,
-	            'Hello111!'
+	            '하이하이'
 	         );
 	      }
 	   }]);

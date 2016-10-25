@@ -45,6 +45,7 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
+  
 }
 
 // production error handler

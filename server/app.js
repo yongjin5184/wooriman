@@ -6,16 +6,26 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('../routes/index');
-
 var users = require('../routes/users');
 
 const app = express();
 const port = 9000;
 const devPort = 9001;
  
- 
+ var mysql = require('mysql');
+
+function connDB() {
+	var connection = mysql.createConnection({
+		host : '127.0.0.1',
+		user : 'root',
+		password : '123qwe',
+		port: 3306,
+		database: 'rtes'
+	});
+	return connection;
+}
+
 if(process.env.NODE_ENV == 'development') {
     console.log('Server is running on development mode');
  
@@ -28,56 +38,11 @@ if(process.env.NODE_ENV == 'development') {
 }
 
 app.use('/', express.static(__dirname + '/../public'));
-
-//port setup
-app.set('port', process.env.PORT || 9000);
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
+ 
+var users = require('./routes/users');
 app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+ 
+const server = app.listen(port, () => {
+    console.log('Express listening on port', port);
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-////////////////////////////////////
-//-------------- create Server ----------
-module.exports = app;
-
-var server = app.listen(app.get('port'), function(){
-	console.log('Express server listening on port ' + server.address().port);
-});
-
-module.exports = app;
